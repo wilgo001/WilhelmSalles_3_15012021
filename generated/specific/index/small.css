@@ -1,0 +1,28 @@
+header {
+  background-color: red;
+}
+
+form {
+  background-color: lightblue;
+}
+form input {
+  background-color: lightgray;
+}
+
+aside {
+  background-color: lightgreen;
+}
+
+article {
+  background-color: pink;
+}
+
+footer {
+  background-color: blue;
+}
+
+img {
+  width: 100px;
+}
+
+/*# sourceMappingURL=small.css.map */
