@@ -1,24 +1,263 @@
+@charset "UTF-8";
+:root {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 header {
-  background-color: red;
+  background-color: white;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+header h1 {
+  font-family: "Shrikhand";
+  font-size: 2.8rem;
+}
+header h1 a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  font-size: 1.9rem;
+  font-weight: bold;
 }
 
 form {
-  background-color: lightblue;
+  height: 270px;
+  text-align: center;
+  background-color: #f5f5f5;
+}
+form .input {
+  margin: 0;
+  background-color: lightgray;
+}
+form .input::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
 }
 form input {
+  display: inline-block;
   background-color: lightgray;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+form h2 {
+  margin: 30px 50px 0 50px;
+}
+form p {
+  margin: 20px 30px;
+  font-size: 1.4rem;
+}
+form button {
+  margin: 0 30px;
+  font-size: 1.3rem;
+  padding: 15px 20px;
+  border-radius: 30px;
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
+  color: white;
+  box-shadow: 0 5px 5px lightgray;
 }
 
 aside {
-  background-color: lightgreen;
+  background-color: white;
+  padding: 40px 20px;
+}
+aside h2 {
+  margin: 0 0 20px 0;
+}
+aside ul {
+  margin-left: 10px;
+  display: grid;
+  grid-row-gap: 15px;
+  grid-column-gap: 30px;
+  grid-template-areas: "li1" "li2" "li3";
+}
+aside li {
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  box-shadow: 0 5px 5px lightgray;
+  font-size: 1.2rem;
+  position: relative;
+  font-weight: bold;
+}
+aside li::before {
+  display: inline-block;
+  border-radius: 10px;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  background-color: #9356dc;
+  color: white;
+  position: absolute;
+  left: -10px;
+  top: 20px;
+}
+aside li p {
+  position: relative;
+}
+aside li p::before {
+  position: absolute;
+  left: 30px;
+  color: grey;
+  font-size: 1.7rem;
+}
+
+#li1 {
+  grid-area: li1;
+}
+#li1::before {
+  content: "1";
+}
+#li1 p::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+}
+
+#li2 {
+  grid-area: li2;
+}
+#li2::before {
+  content: "2";
+}
+#li2 p::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+}
+
+#li3 {
+  grid-area: li3;
+  background-color: rgba(147, 86, 220, 0.2);
+  box-shadow: 0 0 5px lightgray;
+}
+#li3::before {
+  content: "3";
+}
+#li3 p::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  color: #9356dc;
 }
 
 article {
-  background-color: pink;
+  background-color: #f5f5f5;
+  display: grid;
+  grid-row-gap: 30px;
+  grid-column-gap: 30px;
+  padding: 30px;
+  grid-template-rows: 30px repeat(4, auto);
+  grid-template-areas: "title" "section1" "section2" "section3" "section4";
+}
+article h2 {
+  grid-area: title;
+}
+article figure {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+}
+article figure img {
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100px;
+}
+article figure figcaption {
+  margin: 15px 0;
+  position: relative;
+}
+article figure figcaption h3 {
+  font-size: 1.3rem;
+  margin: 5px 10px;
+  font-weight: bold;
+}
+article figure figcaption p {
+  font-size: 1.2rem;
+  margin: 5px 10px;
+}
+article figure figcaption button {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 2.2rem;
+  background: white;
+  background: -webkit-linear-gradient(#ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#section1::after, #section2::after {
+  content: "Nouveau";
+  color: #08813b;
+  background-color: #88c2a5;
+  position: absolute;
+  padding: 5px 10px;
+  top: 10px;
+  right: 10px;
+}
+
+#section1 {
+  grid-area: section1;
+}
+
+#section2 {
+  grid-area: section2;
+}
+
+#section3 {
+  grid-area: section3;
+}
+
+#section4 {
+  grid-area: section4;
 }
 
 footer {
-  background-color: blue;
+  background-color: #464646;
+  color: white;
+  padding: 20px 20px;
+}
+footer h4 {
+  font-family: "Shrikhand";
+  font-size: 1.5rem;
+  padding-bottom: 15px;
+}
+footer li {
+  font-size: 1rem;
+  padding: 2px 0;
+}
+footer #f1::before {
+  font-size: 1.15rem;
+  padding-right: 5px;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  content: "";
+}
+footer #f2::before {
+  font-size: 0.75rem;
+  padding-right: 5px;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  content: "";
 }
 
 img {
