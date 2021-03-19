@@ -3,6 +3,9 @@ $primary: #9356dc;
 $secondary: #ff79da;
 $tertiary: #99e2d0;
 $prm-sec: linear-gradient(to bottom right, $secondary, $primary);
+$primary-hover : #9356dc55;
+$secondary-hover : #ff7ad955;
+$prm-sec-hover : linear-gradient(to bottom right, $secondary-hover, $primary-hover);
 
 :root {
     font-size: 10px;
@@ -16,11 +19,13 @@ button {
 }
 
 header {
+    position: relative;
     background-color: white;
     height: 50px;
     text-align: center;
     line-height: 50px;
-
+    box-shadow: 0 1px 5px grey;
+    z-index: 2;
     h1 {
         font-family: 'Shrikhand';
         font-size: 2.8rem;
@@ -42,7 +47,7 @@ form {
     background-color: $grey-1;
     .input {
         margin: 0;
-        background-color: lightgray;
+        background-color: #dbdbdb;
         &::before {
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
@@ -51,7 +56,7 @@ form {
     }
     input {
         display: inline-block;
-        background-color: lightgray;
+        background-color: #dbdbdb;
         height: 40px;
         line-height: 40px;
         margin: 0;
@@ -76,6 +81,9 @@ form {
         color: white;
         box-shadow: 0 5px 5px lightgray;
     }
+    button:hover{
+        background: $prm-sec-hover;
+    }
 }
 
 aside {
@@ -92,7 +100,7 @@ aside {
         grid-template-areas: 'li1' 'li2' 'li3';
     }
     li {
-        text-align: center;
+        text-align: left;
         height: 60px;
         line-height: 60px;
         border-radius: 20px;
@@ -107,6 +115,7 @@ aside {
             height: 20px;
             width: 20px;
             line-height: 20px;
+            text-align: center;
             background-color: $primary;
             color: white;
             position: absolute;
@@ -115,6 +124,7 @@ aside {
         }
         p {
             position: relative;
+            padding: 0 10px 0 calc(50% - 70px) ;
         }
         p::before {
             position: absolute;
@@ -132,8 +142,8 @@ aside {
             content: '#{$i}';
         }
         @if $i == 3 {
-            background-color: rgba(147, 86, 220, 0.2);
-            box-shadow: 0 0 5px lightgray;
+            background-color: $primary-hover;
+            box-shadow: 0 5px 5px lightgray;
         }
         p::before {
             font-family: 'Font Awesome 5 Free';
@@ -157,7 +167,7 @@ article {
     display: grid;
     grid-row-gap: 30px;
     grid-column-gap: 30px;
-    padding: 30px;
+    padding: 20px;
     grid-template-rows: 30px repeat(4, auto);
     grid-template-areas: 'title' 'section1' 'section2' 'section3' 'section4';
     h2 {
@@ -165,6 +175,7 @@ article {
     }
     figure {
         position: relative;
+        box-shadow: 0 5px 5px lightgray;
         background-color: white;
         border-radius: 10px;
         img {
@@ -191,9 +202,26 @@ article {
                 right: 20px;
                 font-size: 2.2rem;
                 background: white;
+                &::before {
+                    font-family: 'Font Awesome 5 Free';
+                    content: '\f004';
+                    margin-right: -21.5px;
+                }
+                &::after {
+                    font-family: 'Font Awesome 5 Free';
+                    content: '\f004';
                     background: -webkit-linear-gradient($secondary, $primary);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
+                    font-weight: 900;
+                    transform: scale(0);
+                }
+
+            }
+            button:hover:after {
+                transform: scale(1.5);
+                transition: transform 1000ms;
+                
             }
         }
     }

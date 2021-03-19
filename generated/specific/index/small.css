@@ -11,10 +11,13 @@ button {
 }
 
 header {
+  position: relative;
   background-color: white;
   height: 50px;
   text-align: center;
   line-height: 50px;
+  box-shadow: 0 1px 5px grey;
+  z-index: 2;
 }
 header h1 {
   font-family: "Shrikhand";
@@ -37,7 +40,7 @@ form {
 }
 form .input {
   margin: 0;
-  background-color: lightgray;
+  background-color: #dbdbdb;
 }
 form .input::before {
   font-family: "Font Awesome 5 Free";
@@ -46,7 +49,7 @@ form .input::before {
 }
 form input {
   display: inline-block;
-  background-color: lightgray;
+  background-color: #dbdbdb;
   height: 40px;
   line-height: 40px;
   margin: 0;
@@ -71,6 +74,9 @@ form button {
   color: white;
   box-shadow: 0 5px 5px lightgray;
 }
+form button:hover {
+  background: linear-gradient(to bottom right, #ff7ad955, #9356dc55);
+}
 
 aside {
   background-color: white;
@@ -87,7 +93,7 @@ aside ul {
   grid-template-areas: "li1" "li2" "li3";
 }
 aside li {
-  text-align: center;
+  text-align: left;
   height: 60px;
   line-height: 60px;
   border-radius: 20px;
@@ -103,6 +109,7 @@ aside li::before {
   height: 20px;
   width: 20px;
   line-height: 20px;
+  text-align: center;
   background-color: #9356dc;
   color: white;
   position: absolute;
@@ -111,6 +118,7 @@ aside li::before {
 }
 aside li p {
   position: relative;
+  padding: 0 10px 0 calc(50% - 70px);
 }
 aside li p::before {
   position: absolute;
@@ -145,8 +153,8 @@ aside li p::before {
 
 #li3 {
   grid-area: li3;
-  background-color: rgba(147, 86, 220, 0.2);
-  box-shadow: 0 0 5px lightgray;
+  background-color: #9356dc55;
+  box-shadow: 0 5px 5px lightgray;
 }
 #li3::before {
   content: "3";
@@ -163,7 +171,7 @@ article {
   display: grid;
   grid-row-gap: 30px;
   grid-column-gap: 30px;
-  padding: 30px;
+  padding: 20px;
   grid-template-rows: 30px repeat(4, auto);
   grid-template-areas: "title" "section1" "section2" "section3" "section4";
 }
@@ -172,6 +180,7 @@ article h2 {
 }
 article figure {
   position: relative;
+  box-shadow: 0 5px 5px lightgray;
   background-color: white;
   border-radius: 10px;
 }
@@ -200,9 +209,24 @@ article figure figcaption button {
   right: 20px;
   font-size: 2.2rem;
   background: white;
+}
+article figure figcaption button::before {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  margin-right: -21.5px;
+}
+article figure figcaption button::after {
+  font-family: "Font Awesome 5 Free";
+  content: "";
   background: -webkit-linear-gradient(#ff79da, #9356dc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  transform: scale(0);
+}
+article figure figcaption button:hover:after {
+  transform: scale(1.5);
+  transition: transform 1000ms;
 }
 
 #section1::after, #section2::after {
