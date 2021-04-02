@@ -4,6 +4,11 @@
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 button {
   margin: 0;
   padding: 0;
@@ -23,14 +28,89 @@ header h1 {
   font-family: "Shrikhand";
   font-size: 2.8rem;
 }
-header h1 a {
-  text-decoration: none;
-  color: black;
-}
 
 h2 {
   font-size: 1.9rem;
   font-weight: bold;
+}
+
+footer {
+  background-color: #464646;
+  color: white;
+  padding: 20px 20px;
+}
+footer h4 {
+  font-family: "Shrikhand";
+  font-size: 1.5rem;
+  padding-bottom: 15px;
+}
+footer li {
+  font-size: 1rem;
+  padding: 2px 0;
+}
+footer #f1::before {
+  font-size: 1.15rem;
+  padding-right: 5px;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  content: "";
+}
+footer #f2::before {
+  font-size: 0.75rem;
+  padding-right: 5px;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  content: "";
+}
+
+.btn, form button {
+  margin: 0 30px;
+  font-size: 1.3rem;
+  padding: 15px 20px;
+  border-radius: 30px;
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
+  color: white;
+  box-shadow: 0 5px 5px lightgray;
+}
+.btn:hover, form button:hover {
+  background: linear-gradient(to bottom right, #ff7ad955, #9356dc55);
+}
+
+.fa-heart {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 2.2rem;
+  background: white;
+}
+.fa-heart i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+.fa-heart i:before {
+  font-family: "Font Awesome 5 Free";
+  color: transparent;
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-style: normal;
+  background: -webkit-linear-gradient(#ff79da, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+.fa-heart i:hover:before {
+  font-weight: 900;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  transition: transform 1000ms;
 }
 
 form {
@@ -65,19 +145,6 @@ form p {
   margin: 20px 30px;
   font-size: 1.4rem;
 }
-form button {
-  margin: 0 30px;
-  font-size: 1.3rem;
-  padding: 15px 20px;
-  border-radius: 30px;
-  background: linear-gradient(to bottom right, #ff79da, #9356dc);
-  color: white;
-  box-shadow: 0 5px 5px lightgray;
-}
-form button:hover {
-  background: linear-gradient(to bottom right, #ff7ad955, #9356dc55);
-}
-
 aside {
   background-color: white;
   padding: 40px 20px;
@@ -154,7 +221,7 @@ aside li p::before {
 #li3 {
   grid-area: li3;
   background-color: #9356dc55;
-  box-shadow: 0 5px 5px lightgray;
+  box-shadow: 0 5px 5px #9356dc55;
 }
 #li3::before {
   content: "3";
@@ -183,6 +250,7 @@ article figure {
   box-shadow: 0 5px 5px lightgray;
   background-color: white;
   border-radius: 10px;
+  padding-bottom: 5px;
 }
 article figure img {
   border-radius: 10px 10px 0 0;
@@ -202,31 +270,6 @@ article figure figcaption h3 {
 article figure figcaption p {
   font-size: 1.2rem;
   margin: 5px 10px;
-}
-article figure figcaption button {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  font-size: 2.2rem;
-  background: white;
-}
-article figure figcaption button::before {
-  font-family: "Font Awesome 5 Free";
-  content: "";
-  margin-right: -21.5px;
-}
-article figure figcaption button::after {
-  font-family: "Font Awesome 5 Free";
-  content: "";
-  background: -webkit-linear-gradient(#ff79da, #9356dc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
-  transform: scale(0);
-}
-article figure figcaption button:hover:after {
-  transform: scale(1.5);
-  transition: transform 1000ms;
 }
 
 #section1::after, #section2::after {
@@ -253,35 +296,6 @@ article figure figcaption button:hover:after {
 
 #section4 {
   grid-area: section4;
-}
-
-footer {
-  background-color: #464646;
-  color: white;
-  padding: 20px 20px;
-}
-footer h4 {
-  font-family: "Shrikhand";
-  font-size: 1.5rem;
-  padding-bottom: 15px;
-}
-footer li {
-  font-size: 1rem;
-  padding: 2px 0;
-}
-footer #f1::before {
-  font-size: 1.15rem;
-  padding-right: 5px;
-  font-weight: 900;
-  font-family: "Font Awesome 5 Free";
-  content: "";
-}
-footer #f2::before {
-  font-size: 0.75rem;
-  padding-right: 5px;
-  font-weight: 900;
-  font-family: "Font Awesome 5 Free";
-  content: "";
 }
 
 img {

@@ -1,0 +1,116 @@
+@charset "UTF-8";
+:root {
+  font-size: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+header {
+  position: relative;
+  background-color: white;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: 0 1px 5px grey;
+  z-index: 2;
+}
+header h1 {
+  font-family: "Shrikhand";
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 1.9rem;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #464646;
+  color: white;
+  padding: 20px 20px;
+}
+footer h4 {
+  font-family: "Shrikhand";
+  font-size: 1.5rem;
+  padding-bottom: 15px;
+}
+footer li {
+  font-size: 1rem;
+  padding: 2px 0;
+}
+footer #f1::before {
+  font-size: 1.15rem;
+  padding-right: 5px;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  content: "";
+}
+footer #f2::before {
+  font-size: 0.75rem;
+  padding-right: 5px;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  content: "";
+}
+
+.btn {
+  margin: 0 30px;
+  font-size: 1.3rem;
+  padding: 15px 20px;
+  border-radius: 30px;
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
+  color: white;
+  box-shadow: 0 5px 5px lightgray;
+}
+.btn:hover {
+  background: linear-gradient(to bottom right, #ff7ad955, #9356dc55);
+}
+
+.fa-heart {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-size: 2.2rem;
+  background: white;
+}
+.fa-heart i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+.fa-heart i:before {
+  font-family: "Font Awesome 5 Free";
+  color: transparent;
+  content: "";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-style: normal;
+  background: -webkit-linear-gradient(#ff79da, #9356dc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+.fa-heart i:hover:before {
+  font-weight: 900;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  transition: transform 1000ms;
+}
+
+/*# sourceMappingURL=global.css.map */
