@@ -1,0 +1,236 @@
+@import '../../global.scss';
+
+#preload {
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 100;
+    animation: hide-loading 0.5s ease-in 3s;
+    animation-fill-mode: forwards;
+    h1 {
+        display: block;
+        position: relative;
+        top: calc(50% - 15px);
+        margin: auto;
+        text-align: center;
+        font-family: "Shrikhand";
+        font-size: 3rem;
+        color: lightgrey;
+        &::before {
+            content:'';
+            width: 100%;
+            height: 0;
+            background: black;
+            position: absolute;
+            bottom: 0;
+            mix-blend-mode: color-burn;
+            animation: loading 3s ease-in;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+form {
+    height: 270px;
+    text-align: center;
+    background-color: $grey-1;
+    .input {
+        margin: 0;
+        background-color: #dbdbdb;
+        &::before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            content: '\f3c5';
+        }
+    }
+    input {
+        display: inline-block;
+        background-color: #dbdbdb;
+        height: 40px;
+        line-height: 40px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    h2 {
+        margin: 30px 50px 0 50px;
+    }
+    p {
+        margin: 20px 30px;
+        font-size: 1.4rem;
+    }
+    button {
+        @extend .btn;
+    }
+}
+
+aside {
+    background-color: white;
+    padding: 40px 20px;
+    h2 {
+        margin: 0 0 20px 0;
+    }
+    ul {
+        margin-left: 10px;
+        display: grid;
+        grid-row-gap: 15px;
+        grid-column-gap: 30px;
+        grid-template-areas: 'li1' 'li2' 'li3';
+    }
+    li {
+        text-align: left;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 20px;
+        background-color: $grey-1;
+        box-shadow: 0 5px 5px lightgray;
+        font-size: 1.2rem;
+        position: relative;
+        font-weight: bold;
+        &::before {
+            display: inline-block;
+            border-radius: 10px;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            text-align: center;
+            background-color: $primary;
+            color: white;
+            position: absolute;
+            left: -10px;
+            top: 20px;
+        }
+        p {
+            position: relative;
+            padding: 0 10px 0 calc(50% - 70px) ;
+        }
+        p::before {
+            position: absolute;
+            left: 30px;
+            color: grey;
+            font-size: 1.7rem;
+        }
+    }
+}
+
+@for $i from 1 through 3 {
+    #li#{$i} {
+        grid-area: li#{$i};
+        &::before {
+            content: '#{$i}';
+        }
+        @if $i == 3 {
+            background-color: $primary-hover;
+            box-shadow: 0 5px 5px $primary-hover;
+        }
+        p::before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            @if $i == 1 {
+                content: '\f3cd';
+            }
+            @if $i == 2 {
+                content: '\f0ca';
+            }
+            @if $i == 3 {
+                content: '\f54e';
+                color: $primary;
+            }
+        }
+    }
+}
+
+article {
+    background-color: $grey-1;
+    display: grid;
+    grid-row-gap: 30px;
+    grid-column-gap: 30px;
+    padding: 20px;
+    grid-template-rows: 30px repeat(4, auto);
+    grid-template-areas: 'title' 'section1' 'section2' 'section3' 'section4';
+    h2 {
+        grid-area: title;
+    }
+    figure {
+        position: relative;
+        box-shadow: 0 5px 5px lightgray;
+        background-color: white;
+        border-radius: 10px;
+        padding-bottom: 5px;
+        img {
+            border-radius: 10px 10px 0 0;
+            object-fit: cover;
+            width: 100%;
+            height: 100px;
+        }
+        figcaption {
+            margin: 15px 0;
+            position: relative;
+            h3 {
+                font-size: 1.3rem;
+                margin: 5px 10px;
+                font-weight: bold;
+            }
+            p {
+                font-size: 1.2rem;
+                margin: 5px 10px;
+            }
+        }
+    }
+}
+
+#section1::after, #section2::after {
+    content: 'Nouveau';
+    color: #08813b;
+    background-color: #88c2a5;
+    position: absolute;
+    padding: 5px 10px;
+    top: 10px;
+    right: 10px;
+}
+
+@for $s from 1 through 4 {
+    #section#{$s} {
+        grid-area: section#{$s};
+    }
+}
+img {
+    width: 100px;
+}
+
+@keyframes hide-loading {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes loading {
+    0% {
+        height: 0%;
+    }
+    20% {
+        height: 30%;
+    }
+    40% {
+        height: 40%;
+    }
+    60% {
+        height: 65%;
+    }
+    80% {
+        height: 70%;
+    }
+    100% {
+        height: 100%;
+    }
+}

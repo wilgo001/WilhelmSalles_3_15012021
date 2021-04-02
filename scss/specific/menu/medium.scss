@@ -1,0 +1,33 @@
+@import './small.scss';
+form {
+    display: grid;
+    grid-template-areas: 
+        "title title title title title title title title title"
+        ". . entree entree entree entree entree entree entree"
+        "plat plat plat plat plat plat plat . ."
+        ". dessert dessert dessert dessert dessert dessert dessert ."
+        "submit submit submit submit submit submit submit submit submit";
+    .title {
+        grid-area: title;
+    }
+    .entree {
+        grid-area: entree;
+    }
+    .plat {
+        grid-area: plat;
+    }
+    .dessert {
+        grid-area: dessert;
+    }
+    .input-div {
+        grid-area: submit;
+    }
+}
+section {
+    ul {
+        grid-template-areas: 
+            " . plate1 plate1"
+            "plate2 plate 2 ."
+            " . plate3 plate3";
+    }
+}
