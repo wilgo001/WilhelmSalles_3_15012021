@@ -1,12 +1,17 @@
 @import './small.scss';
+
+img {
+    height: 480px;
+}
+
 form {
     display: grid;
     grid-template-areas: 
-        "title title title title title title title title title"
-        ". . entree entree entree entree entree entree entree"
-        "plat plat plat plat plat plat plat . ."
-        ". dessert dessert dessert dessert dessert dessert dessert ."
-        "submit submit submit submit submit submit submit submit submit";
+        " title title title title title title title title"
+        ". .  entree entree entree entree entree entree"
+        " plat plat plat plat plat plat . ."
+        ". .  dessert dessert dessert dessert dessert dessert"
+        " submit submit submit submit submit submit submit submit";
     .title {
         grid-area: title;
     }

@@ -113,10 +113,23 @@ footer #f2::before {
   transition: transform 1000ms;
 }
 
+.fa-arrow-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 2rem;
+}
+
 img {
   position: relative;
   margin-bottom: -30px;
   z-index: -1;
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
 }
 
 form {
@@ -159,7 +172,7 @@ form ul {
   display: grid;
   grid-row-gap: 10px;
   grid-column-gap: 20px;
-  grid-template-areas: "plate1" "plate2" "plate3";
+  grid-template-areas: "plate1" "plate2" "plate3" "plate4";
 }
 form ul .plate {
   overflow: hidden;
@@ -182,8 +195,12 @@ form ul .plate label {
   min-width: 250px;
 }
 form ul .plate label h4,
-form ul .plate label p {
+form ul .plate label .card-text {
   grid-area: text;
+  width: calc(100% - 30px);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 form ul .plate .input-style {
   transform-origin: 100% 50%;
@@ -237,10 +254,6 @@ form h4 {
   font-size: 1.6rem;
 }
 form .card-text {
-  width: calc(100% - 30px);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
   color: #858585;
   font-size: 1.3rem;
 }
@@ -307,9 +320,13 @@ form .submit-btn {
     transform: translate(0, 0);
   }
 }
+img {
+  height: 480px;
+}
+
 form {
   display: grid;
-  grid-template-areas: "title title title title title title title title title" ". . entree entree entree entree entree entree entree" "plat plat plat plat plat plat plat . ." ". dessert dessert dessert dessert dessert dessert dessert ." "submit submit submit submit submit submit submit submit submit";
+  grid-template-areas: " title title title title title title title title" ". .  entree entree entree entree entree entree" " plat plat plat plat plat plat . ." ". .  dessert dessert dessert dessert dessert dessert" " submit submit submit submit submit submit submit submit";
 }
 form .title {
   grid-area: title;
@@ -336,7 +353,7 @@ form {
 }
 
 section ul {
-  grid-template-areas: "plate1 plate2 plate3";
+  grid-template-areas: "plate1 plate2 plate3 plate4";
   grid-template-columns: repeat(3, 1fr);
 }
 

@@ -1,9 +1,22 @@
 @import "../../global.scss";
 
+.fa-arrow-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 2rem;
+}
+
 img {
   position: relative;
   margin-bottom: -30px;
   z-index: -1;
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
 }
 
 form {
@@ -46,7 +59,7 @@ form {
     display: grid;
     grid-row-gap: 10px;
     grid-column-gap: 20px;
-    grid-template-areas: "plate1" "plate2" "plate3";
+    grid-template-areas: "plate1" "plate2" "plate3" "plate4";
 
     .plate {
       overflow: hidden;
@@ -68,8 +81,12 @@ form {
         width: 100%;
         min-width: 250px;
         h4,
-        p {
+        .card-text {
           grid-area: text;
+          width: calc(100% - 30px);
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
         }
       }
       .input-style {
@@ -130,11 +147,6 @@ form {
   }
 
   .card-text {
-    // padding-right: 30px;
-    width: calc(100% - 30px);
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
     color: #858585;
     font-size: 1.3rem;
   }

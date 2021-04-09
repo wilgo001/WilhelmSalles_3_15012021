@@ -1,10 +1,11 @@
 @import './medium.scss';
+
 form {
     display: block;
 }
 section {
     ul {
-        grid-template-areas: "plate1 plate2 plate3";
+        grid-template-areas: "plate1 plate2 plate3 plate4";
         grid-template-columns: repeat(3, 1fr);
     }
 }
