@@ -98,8 +98,8 @@ footer #f2::before {
   display: flex;
   font-style: normal;
   background: -webkit-linear-gradient(#ff79da, #9356dc);
-  -webkit-background-clip: text;
-  background-clip: text;
+  -webkit-background-clip: content-box;
+  background-clip: content-box;
   -webkit-text-fill-color: transparent;
   transform: scale(0);
   -webkit-transform: scale(0);
