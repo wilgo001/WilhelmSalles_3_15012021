@@ -110,8 +110,8 @@ footer {
       display: flex;
       font-style: normal;
       background: -webkit-linear-gradient($secondary, $primary);
-      -webkit-background-clip: content-box;
-      background-clip: content-box;
+      -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       transform: scale(0);
       -webkit-transform: scale(0);
