@@ -1,11 +1,10 @@
 @import './medium.scss';
 
 form {
-    display: block;
-}
-section {
-    ul {
-        grid-template-areas: "plate1 plate2 plate3 plate4";
-        grid-template-columns: repeat(3, 1fr);
-    }
+    grid-template-areas:
+        "title title title"
+        "entree plat dessert"
+        "submit submit submit";
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
 }

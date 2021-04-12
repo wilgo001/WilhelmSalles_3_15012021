@@ -6,12 +6,13 @@ img {
 
 form {
     display: grid;
-    grid-template-areas: 
-        " title title title title title title title title"
-        ". .  entree entree entree entree entree entree"
-        " plat plat plat plat plat plat . ."
-        ". .  dessert dessert dessert dessert dessert dessert"
-        " submit submit submit submit submit submit submit submit";
+    grid-template-areas:
+        "title title title"
+        ". entree entree"
+        " plat plat ."
+        ". dessert dessert"
+        "submit submit submit";
+    grid-template-columns: 1fr 3fr 1fr;
     .title {
         grid-area: title;
     }
@@ -26,13 +27,5 @@ form {
     }
     .input-div {
         grid-area: submit;
-    }
-}
-section {
-    ul {
-        grid-template-areas: 
-            " . plate1 plate1"
-            "plate2 plate 2 ."
-            " . plate3 plate3";
     }
 }
